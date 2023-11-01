@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Online Quiz Maker</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- Fav Icon -->
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <!-- Offline Bootstrap links -->
+  <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+  <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+  <script src="Bootstrap/js/bootstrap.min.js"></script>
+  <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+  <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- online bootstrap links -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- Normalization and foundation files  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <!-- <link rel='stylesheet prefetch'href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css'> -->
+  <!-- Font Awosem v5 icons -->
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+  <!-- custom css files -->
+  <!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/login-home.css">
+  <link rel="stylesheet" href="css/home_header_style.css">
+  <link rel="stylesheet" href="css/home_second_part_style.css">
+  <link rel="stylesheet" href="css/home_meet_instrauctor.css">
+  <link rel="stylesheet" href="css/home_test_monial.css">
+  <link rel="stylesheet" href="css/home_footer_style.css">
+  <!-- exteranl js file -->
+  <script src="js/home.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+</head>
+
+<body>
+  <div class="home_header_style">
+    <div class="header-area-style">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-transparent   ">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/1.jpg" style=" width: 190px;" alt="Logo" srcset="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+          <ul class="navbar-nav" style="margin-right: 200px;">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="min-width: 96.016px;" href="./Contact_us.html">Contact-Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="min-width: 83.750px;" href="./About_us.html">About-Us</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav" id="nav-noUser" style="float: left; margin-left: 0px;">
+            <li>
+              <a class="boxed_btn_orange nav-item" href="./REGISTER.html">
+                <span>Register </span>
+              </a>
+            </li>
+            <li style="min-width: 116.458px;">
+
+
+              <a style="min-width: 116.458px;" class="boxed_btn_orange nav-item" href="#"
+                onclick="document.getElementById('id01').style.display='block'">
+                <span>Log-in </span>
+              </a>
+
+              <div id="id01" class="modal">
+
+                <form class="modal-content animate" action="" method="post">
+                  <div class="imgcontainer">
+                    <img src="imgages/3.png" alt="Avatar" class="avatar">
+                  </div>
+
+                  <div class="container">
+                    <label for="uname"><b>E-Mail</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" id="Email" maxlength="40" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" id="Password" name="psw" maxlength="40"
+                      required>
+                    <div id="errMes" style="color: red;margin: 30px; display: block"></div>
+                    <button class="login" type="button" onclick="login();">Login</button>
+                  </div>
+
+                  <div class="container">
+
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                      class="cancelbtn">Cancel</button>
+                    <span class="psw">Don't have an account? <a href="./REGISTER.html" style="color: orange;">Sign
+                        up</a></span>
+                  </div>
+                </form>
+              </div>
+
+            </li>
+
+          </ul>
+          <ul class="navbar-nav" id="nav-avatar" style="float: left; display: none ; ">
+            <li id="info-bar">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle"
+                  style=" border-radius: 15px ; border: 0 ; background-color: transparent ;" type="button"
+                  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-user" style="font-size: 25px  "></i>
+                  <label id="profile-name-avatar"
+                    style="margin-left: 7px ; font-size: 17px ; text-transform: none; color: white;"></label>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="profile.html">Profile</a>
+                  <a class="dropdown-item" onclick="logOut();">Log Out</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+    </div>
+    <hr style="width: 100%;max-width: 90em;">
+    <!-- Start Image :) -->
+    <div class="container">
+      <div class="row">
+
+        <div class="header-img">
+          <img src="../images/3.png" alt="header-img">
+        </div>
+        <div class="header-text col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <h1 style="font-family: 'Courier New', Courier, monospace; 
+                font-weight: bold; 
+                font-size: 60px;
+                padding-top: 50px;
+                color: orange">
+
+            Online Quizzer</h1>
+          <p style="align-self: auto;color: white; 
+                    font-size: 40px;
+                    font-family: 'Times New Roman', Times, serif;">
+            The Easyiest way to generate your online Quiz.</p>
+          <button onclick="window.location.href = './REGISTER.html'; " style="margin-bottom: 5px;" class="btn btn-info"
+            id="getbutoon">Get Started</button>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+  </div>
+  <!-- Staet of Second Part    -->
+  <div class="about_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 col-lg-6">
+          <div class="single_about_info">
+            <h3>Over 20 Quiz From 5 Instructurs</h3>
+            <p>Our Website Made It Easy for All Instructors to create their Quiz
+              and for Students From All over The World To Participate and Get Their Quiz
+              Results More Easily And Can Also get Certificate of completion of the Quiz . <br> <b>Join US Now.. It's
+                Free</b>
+            </p>
+            <a href="./About_us.html" class="btn btn-info">Learn More About Online Quizzer</a>
+          </div>
+        </div>
+        <div class="col-xl-6 offset-xl-1 col-lg-6  column small-12 large-9" id="MainContent">
+          <section class="community__venn">
+            <div class="circle top-left blue">
+              <p class="circle__header">+20 Quiz</p>
+            </div>
+            <div class="circle top-right green">
+              <p class="circle__header">+5 Instractor</p>
+            </div>
+            <div class="circle bottom light-blue">
+              <p class="circle__header">+15 Student</p>
+            </div>
+
+          </section>
+        </div>
+        <!---->
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- END  -->
+  <!-- Start meet instructors section -->
+  <div class="meet-inst">
+    <div class="container " style="width: 100%;">
+      <h1 class="text-center meet-head-style" style="font-size: 50px;color: #5491AC;">
+        Meet Our <span style="font-size: larger; display: inline;">3</span> Top Instructors <span
+          style="color: red;display: inline;">♥</span></h1>
+      <div class="row" style="padding: 5px; ">
+
+        <!-- First img -->
+        <div class="col-md-4 col-sm-6 ">
+          <div class="card profile-card-1">
+            <img src="img/home/instructor-test.png" alt="profile-sample1" class="background" />
+            <img src="img/home/instructor-test.png" alt="profile-image" class="profile" />
+            <div class="card-content">
+              <h2>Nishkarsh Singh<small>Teaching Assisstant</small></h3>
+                <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"> <i class="fa fa-twitter"></i></a>
+                  <a href="#"> <i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- second img -->
+
+        <div class="col-md-4 col-sm-6 ">
+          <div class="card profile-card-1">
+            <img src="img/home/instructor-test3.png" alt="profile-sample1" class="background" />
+            <img src="img/home/instructor-test3.png" alt="profile-image" class="profile" />
+            <div class="card-content">
+              <h2>Prajwal<small>Engineer</small></h3>
+                <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"> <i class="fa fa-twitter"></i></a>
+                  <a href="#"> <i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- third img -->
+        <div class="col-md-4 col-sm-6 ">
+          <div class="card profile-card-1">
+            <img src="img/home/instructor-test2.png" alt="profile-sample1" class="background" />
+            <img src="img/home/instructor-test2.png" alt="profile-image" class="profile" />
+            <div class="card-content">
+              <h2>Praful Verma<small>Android Instructur</small></h3>
+                <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"> <i class="fa fa-twitter"></i></a>
+                  <a href="#"> <i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+  <!-- End meet instructo -->
+
+  <!-- ******************************************************************************************* -->
+  <hr>
+
+  <!-- Start TestMonial -->
+
+
+
+  <section class="testimonials text-center bg-light">
+    <div class="container">
+      <h2 class="mb-5">What people are saying about <span style="color: orange;">Online Quiz</span>...</h2>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/profile/test.png" alt="">
+            <h5>Sadique Ali</h5>
+            <p class="font-weight-light mb-0">"Logic will get you from A to Z; imagination will get you
+              every where,I love This Site"</p>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/profile/test.png" alt="">
+            <h5>Innama Zehra</h5>
+            <p class="font-weight-light mb-0">
+              “If you can't explain it to a six year old, you don't understand it yourself
+              . Good Job in this awsome site”</p>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/profile/test.png" alt="">
+            <h5>Safia Bano</h5>
+            <p class="font-weight-light mb-0"> “Anyone who has never made a mistake has never tried anything
+              new. keep Trying” </p>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end testmonial -->
+
+
+
+
+
+
+  <!-- Start Footer -->
+  <div>
+    <!--UN USed-->
+
+    <div class="mt-5 pt-5 pb-5 footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-xs-12 about-company">
+            <h2 class="orange-text">Online Quiz</h2>
+            <p class="pr-5 text-white-50"> web Application that help Instructors to generate their custom
+              Quiz <br>
+              <span class="orange-text">Online Quiz</span> Was made with <span
+                style="color: red; font-size: 20px;">♥</span>
+              by 5 Students as a part of Web-Programming
+              Course
+            </p>
+          </div>
+          <div class="col-lg-3 col-xs-12 links">
+            <h4 class="mt-lg-0 mt-sm-3 orange-text">Quick Links</h4>
+            <ul class="m-0 p-0">
+              <li><a href="./Contact_us.html">Contact Us</a></li>
+              <li><a href="./About_us.html">About US</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-xs-12 location">
+            <h4 class="mt-lg-0 mt-sm-4 orange-text">Location</h4>
+            <p><i class="fa fa-map-marker  mr-3"></i> Lucknow,INDIA </p>
+            <p><i class="fa fa-envelope-o mr-3 "></i>quiz2023@gmail.com</p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col copyright">
+            <p class=""><small class="text-white-50">© 2023. All Rights Reserved For <span
+                  class="orange-text">Quiz</span>.</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- End Footer  -->
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=218036350"></script>
+  <script src="script.js/watson.js"></script>
+  <script src="./app.js"></script>
+  <script src="script.js"></script>
+
+
+
+</body>
+
+</html>
